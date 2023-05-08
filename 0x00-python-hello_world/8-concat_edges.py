@@ -1,3 +1,5 @@
-#!/usr/bin/env python3
-str = "with Python"
-print("object-oriented programming " + str[:4] + str[-7:])
+#!/usr/bin/python3
+str = "Python is an interpreted, interactive, object-oriented programming\
+ language that combines remarkable power with very clear syntax"
+str = '{}{}{}'.format(str[37:67], str[-22:-17], str[:6])[2:]
+print(str)
