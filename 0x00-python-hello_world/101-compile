@@ -4,9 +4,13 @@ import os
 
 # We get the file name of the pythpne script from the envuronment variable
 pyfile = os.environ.get("PYFILE")
+
+if pyfile is None:
+	print('Error: PYFILE environment variable is not set.')
+else:
 # Here, we compile the script and generate the output filename
-pycfile = pyfile + "c"
-py_compile.compile(pyfile,pycfile)
+	pycfile = pyfile + "c"
+	py_compile.compile(pyfile,pycfile)
 
 #Output the status of the message and then exit
-print(f"Compiling {pyfile} ...")
+	print(f"Compiling {pyfile} ...")
