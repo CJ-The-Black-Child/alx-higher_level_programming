@@ -2,15 +2,11 @@
 import py_compile
 import os
 
-pyfile = os.environ.get('PYFILE')
+# We get the file name of the pythpne script from the envuronment variable
+pyfile = os.environ.get("PYFILE")
+# Here, we compile the script and generate the output filename
+pycfile = pyfile + "c"
+py_compile.compile(pyfile,pycfile)
 
-if pyfile is None:
-	exit(1)
-
-	print(f"Compiling {pyfile} ...")
-
-try:
-	py_compile.compile(pyfile, cfile=f"{pyfile}c")
-except py_compile.PyCompileError as e:
-	print(e.msg, file = sys.stderr)
-	exit(1)
+#Output the status of the message and then exit
+print(f"Compiling {pyfile} ...")
