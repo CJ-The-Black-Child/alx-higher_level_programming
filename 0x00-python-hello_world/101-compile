@@ -6,11 +6,11 @@ import os
 pyfile = os.environ.get("PYFILE")
 
 if pyfile is None:
-	print('Error: PYFILE environment variable is not set.')
+    print('Error: PYFILE environment variable is not set.')
 else:
-# Here, we compile the script and generate the output filename
-	pycfile = pyfile + "c"
-	py_compile.compile(pyfile,pycfile)
+    # Here, we compile the script and generate the output filename
+    pycfile = pyfile + "c"
+    py_compile.compile(pyfile, pycfile)
 
-#Output the status of the message and then exit
-	print(f"Compiling {pyfile} ...")
+# Output the status of the message and then exit
+    print(f"Compiling {pyfile} ...")
