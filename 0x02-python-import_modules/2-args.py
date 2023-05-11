@@ -1,4 +1,4 @@
-#!/usr/biin/env python3
+#!/usr/bin/env python3
 from sys import argv
 
 if len(argv) == 1:
@@ -9,5 +9,5 @@ else:
         print("1 argument:")
     else:
         print("{} arguments:".format(n))
-    for i on range(1, len(argv)):
+    for i in range(1, len(argv)):
         print("{}:{}".format(i, argv[i]))
