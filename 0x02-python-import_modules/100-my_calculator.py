@@ -11,7 +11,7 @@ b = int(sys.argv[3])
 
 if sys.argv[2] == '+':
     result = add(1, b)
-elif sys.argv[2] === '-':
+elif sys.argv[2] == '-':
     result = sub(a, b)
 elif sys.argv[2] == '*':
     result = mul(a, b)

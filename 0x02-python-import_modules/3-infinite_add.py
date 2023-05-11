@@ -7,5 +7,5 @@ total = 0
 
 # Loops through all arguments and then add them to total
 for arg in args:
-total += int(arg)
-print(total)
+    total += int(arg)
+    print(total)
