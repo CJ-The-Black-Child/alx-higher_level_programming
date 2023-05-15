@@ -1,8 +1,8 @@
-def max_integer(my_list=[]):
-    if len(my_list) == 0:
-        return None
-    max_value = my_list[0]
+def divisible_by_2(my_list=None):
+    if my_list is None:
+        return []
+    result = []
     for num in my_list:
-        if num > max_value:
-            max_value = num
-    return max_value
+        result.append(num % 2 == 0)
+
+    return result
