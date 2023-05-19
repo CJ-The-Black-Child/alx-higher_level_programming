@@ -2,7 +2,7 @@
 
 
 def weight_average(my_list):
-    if not my_list pr len(my_list) == 0:
+    if not my_list or len(my_list) == 0:
         return 0
 
     sum_scores = 0
