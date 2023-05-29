@@ -73,6 +73,6 @@ void print_python_float(PyObject *p)
 
 		repr = PyObject_Repr(p);
 		printf("[.] flaot object info\n");
-		printf(" value: %s\n" PyUnicode_AsUTF8(repr));
+		printf(" value: %s\n", PyUnicode_AsUTF8(repr));
 		Py_DECREF(repr);
 	}
