@@ -1,6 +1,10 @@
 #include <Python.h>
 #include <stdio.h>
 
+/**
+ * print_python_list - Prints information about Python List Object
+ * @p: Pointer to the Python List Object
+ */
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t, i;
@@ -15,7 +19,7 @@ void print_python_list(PyObject *p)
 	size = PyList_Size(p);
 
 	printf("[*] Python list info\n");
-	printf("[*] Size of the Python List = %ld\n",size);
+	printf("[*] Size of the Python List = %ld\n", size);
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
 	for (i = 0; i < size; i++)
@@ -24,6 +28,11 @@ void print_python_list(PyObject *p)
 		printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
 	}
 }
+
+/**
+ * print_python_bytes - Prints information about a Python byte object
+ * @p: Pointer to the python byte object
+ */
 void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
@@ -39,8 +48,11 @@ void print_python_bytes(PyObject *p)
 			printf(" %.2x", (unsigned char)str[i]);
 		printf("\n");
 	}
-
-	void print_python_float(PyObject *p)
+/**
+ * print_python_float - Prints information about a Python float object
+ * @p: Pointer to the Python float Object
+ */
+void print_python_float(PyObject *p)
 	{
 		PyObject *repr;
 
