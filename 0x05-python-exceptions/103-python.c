@@ -5,11 +5,13 @@
  * print_python_list - Prints information about Python List Object
  * @p: Pointer to the Python List Object
  */
+ void print_python_list(PyObject *p);
 void print_python_float(PyObject *p);
 void print_python_bytes(PyObject *p);
+
 void print_python_list(PyObject *p)
 {
-	Py_ssize_t, i;
+	Py_ssize_t size, i;
 	PyObject *item;
 
 	if (!PyList_Check(p))
@@ -42,14 +44,19 @@ void print_python_bytes(PyObject *p)
 
 	if (!PyBytes_Check(p))
 	{
-		printf("[.] byte object info\n");
-		printf(" size: %ld\n", size);
-		printf(" trying string: %s\n", str);
-		printf(" first %ld bytes:", (size < 10) ? size + 1 : 10);
-		for (i = 0; i < size && i < 10; i++)
-			printf(" %.2x", (unsigned char)str[i]);
-		printf("\n");
+		printf("[.] Invald byte object\n");
+		return;
 	}
+	size = PyBytes_Size(p);
+	str = PyBytes_AsString(p);
+	printf("[.] byte object info\n");
+	printf(" size: %ld\n", size);
+	printf(" trying string: %s\n", str);
+	printf(" first %ld bytes:", (size < 10) ? size + 1 : 10);
+	for (i = 0; i < size && i < 10; i++)
+		printf(" %.2x", (unsigned char)str[i]);
+	printf("\n");
+}
 /**
  * print_python_float - Prints information about a Python float object
  * @p: Pointer to the Python float Object
