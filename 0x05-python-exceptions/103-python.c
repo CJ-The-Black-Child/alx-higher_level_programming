@@ -39,7 +39,7 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size, i;
+	Py_ssize_t size;
 	char *str;
 
 	if (!PyBytes_Check(p))
@@ -47,15 +47,18 @@ void print_python_bytes(PyObject *p)
 		printf("[.] Invald byte object\n");
 		return;
 	}
+
 	size = PyBytes_Size(p);
 	str = PyBytes_AsString(p);
+
 	printf("[.] byte object info\n");
 	printf(" size: %ld\n", size);
 	printf(" trying string: %s\n", str);
 	printf(" first %ld bytes:", (size < 10) ? size + 1 : 10);
-	for (i = 0; i < size && i < 10; i++)
+	for (Py_ssize_t i = 0; i < size && i < 10; i++)
 		printf(" %.2x", (unsigned char)str[i]);
 	printf("\n");
+
 }
 /**
  * print_python_float - Prints information about a Python float object
