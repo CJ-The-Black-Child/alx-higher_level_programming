@@ -5,7 +5,7 @@
  * print_python_list - Prints information about Python List Object
  * @p: Pointer to the Python List Object
  */
- void print_python_list(PyObject *p);
+void print_python_list(PyObject *p);
 void print_python_float(PyObject *p);
 void print_python_bytes(PyObject *p);
 
