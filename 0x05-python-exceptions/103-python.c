@@ -20,7 +20,7 @@ void print_python_list(PyObject *p)
 		return;
 	}
 
-	size = PyList_Size(p);
+	size = PyObject_Length(p);
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %ld\n", size);
