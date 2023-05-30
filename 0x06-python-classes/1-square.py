@@ -6,7 +6,7 @@ class Square:
     """
     Class square that defines a square
     """
-    def __init(self, size):
+    def __init__(self, size):
         """
         Initializes a square instance
         Args:
