@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""class that defines a Node"""
 
 
 class Node:
+    """Class that defines the node"""
 
     def __init__(self, data, next_node=None):
         self.data = data
