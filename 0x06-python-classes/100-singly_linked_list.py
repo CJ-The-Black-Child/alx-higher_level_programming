@@ -3,7 +3,7 @@
 
 
 class Node:
-    """Class Node that defines the node"""
+    """Represents a node."""
 
     def __init__(self, data, next_node=None):
         self.data = data
