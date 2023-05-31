@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Class Square defining a square"""
+"""Class Square that defines a square"""
 
 
 class Square:
     """
-    Class Square that defines a square
+    Class Square that defines a square.
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -28,7 +28,7 @@ class Square:
         """
         Retrieves the value of size
         Returns:
-        int: The size of the square
+            int: The size of the square
         """
         return self.__size
 
