@@ -1,0 +1,51 @@
+******************************************************************************
+File: tests/test_add_add_integer.txt
+******************************************************************************
+
+==============================================================================
+1.) test_add_integer (__main__.TestAddInteger)
+------------------------------------------------------------------------------
+This test case checks the functionalty of the add_integer function.
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+------------------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+==============================================================================
+2) test_add_integer_type_error (__main__.TestAddInteger)
+------------------------------------------------------------------------------
+This test case checks if the add_integer function raises the correct TypeError
+when invalid arguments are passed.
+
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or float
+
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or float
+
+------------------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+
+------------------------------------------------------------------------------
+Ran 6 tests in 0.0002s
+
+OK
