@@ -1,0 +1,42 @@
+******************************************************************************
+File: tests/3-say_my_name.txt
+******************************************************************************
+
+1) say_my_name (__main__.TestSayMyName)
+------------------------------------------------------------------------------
+This test case checks the functionality of the say_my_name function.
+
+>>> say_my_name("John", "smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Bob")
+My name is Bob
+
+------------------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+
+
+==============================================================================
+2) say_my_name_typeError (__main__.TestSayMyName)
+------------------------------------------------------------------------------
+This test case checks if the say_my_name function raises the correct TypeError when invalid arguments are passed.
+
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 34)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+------------------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
