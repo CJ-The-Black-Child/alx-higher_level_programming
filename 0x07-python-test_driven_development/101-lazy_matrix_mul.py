@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """
     Multiplies two matrices.
 
@@ -33,16 +33,16 @@ def matrix_mul(m_a, m_b):
             or not all(isinstance(num, (int, float)) for row in m_b for num in row):
         raise TypeError("m_a should contain only integers or floats and m_b should contain only integers or floats")
     if len(set(len(row) for row in m_a)) > 1 or len(set(len(row)
-                for row in m > b)) > 1:
+                for row in m_b)) > 1:
         raise TypeError("each row of m_a must be of the same size and each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
-        ValueError("m_a and m_b can't be multiplied")
+        raise ValueError("m_a and m_b can't be multiplied")
 
     # Perform matrix multiplication
     result = []
     for i in range(len(m_a)):
         row = []
-        for j in range(len(len(m_b[0])):
+        for j in range(len(m_b[0])):
             sum_val = 0
             for k in range(len(m_b)):
                 sum_val += m_a[i][k] * m_b[k][j]
