@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Defines locked class """
+
+
 class LockedClass:
     """
     Class that prevents the user from dynamically creating new instance
