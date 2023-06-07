@@ -14,7 +14,7 @@ class Rectangle:
             height (int): Height of the rectangle (default is 0).
         """
 
-        self.width =width
+        self.width = width
         self.height = height
 
     @property
@@ -88,7 +88,7 @@ class Rectangle:
             return 0
         return 2 * (self.width + self.height)
 
-    def  __str__(self):
+    def __str__(self):
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width] * self.height)
