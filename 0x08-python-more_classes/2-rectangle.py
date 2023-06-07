@@ -18,8 +18,8 @@ class Rectangle:
             height (int): Height of the rectangle (default is 0).
         """
 
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -69,7 +69,7 @@ class Rectangle:
 
         Raises:
             TypeError: If the value is not an integer.
-            VAlueError: If the value is negative.
+            ValueError: If the value is negative.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
