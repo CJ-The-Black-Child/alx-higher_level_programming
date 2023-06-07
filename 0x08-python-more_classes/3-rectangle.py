@@ -83,15 +83,35 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
+        """
+        Calculates and returns the perimeter of the rectangle.
+
+        Returns:
+            int: Perimeter of the rectangle.
+        """
 
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
 
     def __str__(self):
+        """
+        Returns a string representation of the rectangle.
+
+        Returns:
+            str: String representation of the rectangle, with '#' characters
+            forming the shape.
+        """
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width] * self.height)
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)
+        """
+        Returns a string representation of the rectangle that
+        can be used to recreate the object.
+
+        Returns:
+            str: String representation of the rectangle object.
+        """
+        return "{}({}, {})".format(type(self).__name__, self.width, self.height)
