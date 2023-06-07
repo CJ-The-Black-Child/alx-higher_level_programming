@@ -33,12 +33,12 @@ when invalid arguments are passed.
 >>> add_integer(4, "School")
 Traceback (most recent call last):
     ...
-TypeError: a must be an integer or float
+TypeError: b must be an integer or float
 
 >>> add_integer(None)
 Traceback (most recent call last):
     ...
-TypeError: a must be an integer or float
+TypeError: b must be an integer or float
 
 ------------------------------------------------------------------------------
 Ran 2 tests in 0.001s
