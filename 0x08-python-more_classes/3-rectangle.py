@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""
-Defines a Rectangle class.
-"""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
+    """Represents a Rectangle."""
+
     def __init__(self, width=0, height=0):
         """
         Initializes a Rectangle object with the specified width and height.
@@ -104,14 +104,10 @@ class Rectangle:
         """
         if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join(["#" * self.width] * self.height)
 
-    def __repr__(self):
-        """
-        Returns a string representation of the rectangle that
-        can be used to recreate the object.
-
-        Returns:
-            str: String representation of the rectangle object.
-        """
-        return "{}({}, {})".format(type(self).__name__, self.width, self.height)
+        trect = []
+        for i in range(self.height):
+            [trect.append('#') for j in range(self.width)]
+            if i != self.height - 1:
+                trect.append("\n")
+        return "".join(trect)
