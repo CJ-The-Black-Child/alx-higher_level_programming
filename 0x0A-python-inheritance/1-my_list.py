@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This contains a MyList class"""
 
 
 class MyList(list):

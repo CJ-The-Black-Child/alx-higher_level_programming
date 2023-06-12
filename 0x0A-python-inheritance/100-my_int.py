@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Defines a class Myint"""
+
+
 class MyInt(int):
     """Class representing a rebel integer."""
 
