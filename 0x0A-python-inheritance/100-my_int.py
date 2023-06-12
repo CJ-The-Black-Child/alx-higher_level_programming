@@ -2,7 +2,6 @@
 class MyInt(int):
     """Class representing a rebel integer."""
 
-
     def __eq__(self, other):
         """Checks if the integer is not equal to the specified value.
 

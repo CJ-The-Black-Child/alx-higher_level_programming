@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def inherits_from(obj, a_class):
-    """Checks if an object inherited (directly or indirectly) from the specified class.
+    """Checks if an object inherited (directly or indirectly)
+        from the specified class.
 
     Args:
         obj: The object to check.

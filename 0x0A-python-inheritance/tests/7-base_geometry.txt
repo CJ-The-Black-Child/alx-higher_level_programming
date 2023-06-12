@@ -1,0 +1,55 @@
+******************************************************************************
+File: tests/7-base_geometry.txt
+******************************************************************************
+
+==============================================================================
+1.) test_area_not_implemented (__main__.TestBaseGeometry)
+------------------------------------------------------------------------------
+This test case checks if the area() method raises the exception when called.
+
+
+>> bg = BaseGeometry()
+
+
+>>> bg.area()
+Traceback (most recent call last:):
+   ...
+Exception: area() is not implemented
+
+------------------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+==============================================================================
+2.) test_integer_validator (__main__.TestBaseGeometry)
+------------------------------------------------------------------------------
+This test case checks the functionality of the integer_validator method
+in the BaseGeometry class.
+
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+>>> try:
+...	bg.integer_validator("name", "John")
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+
+>>> try:
+... bg.integer_validator("distance", -4)
+... except Exception as e:
+...	print("[{}] {}".format(e.__class.__name__, e))
+[ValueError] distance must be greater than 0
+
+------------------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+------------------------------------------------------------------------------
+Ran 5 tests in 0.0002s
+
+OK
