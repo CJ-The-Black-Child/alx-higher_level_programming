@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+A defining function append_write to append a string at the end of a text file
+"""
+
+
 def append_write(filename="", text=""):
     """
     Function to append a string at the end of a text file (UTF8) and return
