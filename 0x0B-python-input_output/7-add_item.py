@@ -32,22 +32,3 @@ def save_to_json_file(data, filename):
     """
     with open(filename, 'w') as file:
         json.dump(data, file)
-
-
-"""
-Load existing items from file
-"""
-try:
-    items = load_from_json_file('add_item.json')
-except FileNotFoundError:
-    items = []
-
-"""
-Add new items from command line arguments
-"""
-items.extend(sys.argv[1:])
-
-"""
-Save updated items to file
-"""
-save_to_json_file(items, 'add_item.json')
