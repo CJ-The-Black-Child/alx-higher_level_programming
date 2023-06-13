@@ -29,9 +29,4 @@ class Student:
         Returns:
             dict: A dictionary representing the student object in JSON format.
         """
-        serializable_dict = {
-            'first_name': self.first_name,
-            'last_name':  self.last_name,
-            'age': self.age
-        }
-    return serializable_dict
+    return self.__dict__
