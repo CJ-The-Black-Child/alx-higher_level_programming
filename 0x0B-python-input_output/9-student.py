@@ -5,9 +5,7 @@ A student class represeting a student with attributes and JSON serialization.
 
 
 class Student:
-    """
-        define a class Student
-    """
+    """define a class Student"""
 
     def __init__(self, first_name, last_name, age):
         """
