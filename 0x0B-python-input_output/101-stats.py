@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Reads input from stdin line by line and computes metrics."""
 import sys
 
 lines_count = 0

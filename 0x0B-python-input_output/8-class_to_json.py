@@ -1,5 +1,20 @@
 #!/usr/bin/python3
+"""
+A function to convert a class object to a JSON-serializable dictionary.
+"""
+
+
 def class_to_json(obj):
+    """
+    Convert a class object to a JSON-serializable dictionary.
+
+    Args:
+        obj: The object to convert
+
+    Returns:
+        dict: A dictionary containing the serializable attributes
+        of the object.
+    """
     # Get the dictionary of object attributes
     obj_dict = obj.__dict__
 

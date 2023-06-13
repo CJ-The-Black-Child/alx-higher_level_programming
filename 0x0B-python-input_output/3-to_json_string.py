@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""
+imports the Json dictionary
+"""
 import json
+""" define a function to_json_string"""
+
 
 def to_json_string(my_obj):
     """

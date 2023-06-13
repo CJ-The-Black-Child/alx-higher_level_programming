@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+A script to add items to a JSON file
+"""
 import sys
 from load_from_json_file import load_from_json_file
 from save_to_json_file import save_to_json_file
