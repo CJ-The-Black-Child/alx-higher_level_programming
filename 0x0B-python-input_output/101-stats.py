@@ -10,14 +10,14 @@ try:
     for line in sys.stdin:
         lines_count += 1
 
-    # Extract file size and status cpde from line
+    # Extract file size and status code from line
     _, _, _, _, status_code, file_size = line.split()
 
     # Update total file size
     total_file_size += int(file_size)
 
     # Update status code count
-    status_codes[status_code] = status_codes.get(status_code, 0)
+    status_codes[status_code] = status_codes.get(status_code, 0) + 1
 
     if lines_count % 10 == 0:
         print("File size: {}".format(total_file_size))
