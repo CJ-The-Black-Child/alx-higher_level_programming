@@ -1,4 +1,5 @@
 import json
+import turtle
 import csv
 
 class Base:
@@ -97,3 +98,29 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def draw(cls, list_rectangles, list_squares):
+        turtle.setup(800, 600)
+        turtle.title("Rectangles and Squares")
+        turtle.speed(2)
+
+        for rect in list_rectangles:
+            turtle.penup()
+            turtle.goto(rect.x, rect.y)
+            turtle.pendow()
+            for _ in range(2):
+                turtle.forward(rect.width)
+                turtle.left(90)
+                turtle.forward(rect.height)
+                turtle.left(90)
+
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            for _ in range(4):
+                turtle.forward(square.size)
+                turtle.left(90)
+
+        turtle.done()
