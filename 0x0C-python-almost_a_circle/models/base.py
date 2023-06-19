@@ -52,3 +52,15 @@ class Base:
         dummy.update(**dictionary)
         """Apply the real values using the update method"""
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_str = file.read()
+                obj_dicts = cls.from_json_string(json_str)
+                instances = [cls.create(**obj_dict) for obj_dict in obj_dicts]
+                return instances
+        except FileNotFoundError:
+            return []
