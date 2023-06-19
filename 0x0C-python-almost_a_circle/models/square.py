@@ -14,6 +14,15 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def uodate(self, *args, **kwargs):
+        if args:
+            attrs = ["id", "size", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width
