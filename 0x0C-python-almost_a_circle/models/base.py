@@ -1,4 +1,5 @@
 import json
+import csv
 
 class Base:
     """ Private class attribute to track the number of objects"""
@@ -61,6 +62,38 @@ class Base:
                 json_str = file.read()
                 obj_dicts = cls.from_json_string(json_str)
                 instances = [cls.create(**obj_dict) for obj_dict in obj_dicts]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == "Square":
+                    row = [obj.id, obj.size, obj.x, obj.y]
+                writer.writerow(row)
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        id, width, height, x, y = map(int, row[:5])
+                        from models.rectangle import Rectangle
+                        instance = Rectangle(width, height, x, y, id)
+                    elif cls.__name__ == "Square":
+                        id, size, x, y = map(int, row[:4])
+                        from models.square import Square
+                        instance = Square(size, x, y, id)
+                    instances.append(instance)
                 return instances
         except FileNotFoundError:
             return []

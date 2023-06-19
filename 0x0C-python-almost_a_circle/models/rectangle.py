@@ -1,4 +1,5 @@
 from models.base import Base
+import csv
 
 class Rectangle(Base):
     __nb_objects = 0
@@ -102,3 +103,12 @@ class Rectangle(Base):
         if len(args) == 0 and len(kwargs) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as file:
+            writer =csv.writer(file)
+            for obj in list_objs:
+                row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                writer.writerow(row)
