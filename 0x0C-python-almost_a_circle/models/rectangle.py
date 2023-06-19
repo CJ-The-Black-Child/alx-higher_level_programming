@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Defines a Rectangle model class"""
 from models.base import Base
 import csv
 
