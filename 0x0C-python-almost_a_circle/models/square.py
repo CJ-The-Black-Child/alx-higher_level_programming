@@ -92,3 +92,20 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width
                 )
+
+    @staticmethod
+    def from_dictionary(dict_repr):
+        """
+        Creates a Square instance from its dictionary representation.
+
+        Args:
+            dict_repr (dict): The dictionary representation of the square.
+
+        Returns:
+            Square: The Square instance created from the dictionary.
+        """
+        id = dict_repr.get('id')
+        size = dict_repr.get('size')
+        x = dict_repr.get('x', 0)
+        y = dict_repr.get('y', 0)
+        return Square(size, x, y, id)
