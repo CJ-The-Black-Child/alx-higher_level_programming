@@ -1,2 +1,2 @@
---This lists the DB of the SQL Server
+-- This lists the DB of the SQL Server
 SHOW DATABASES;
