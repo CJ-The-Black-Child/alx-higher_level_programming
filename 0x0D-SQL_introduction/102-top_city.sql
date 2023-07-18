@@ -1,5 +1,7 @@
--- Displays the avg temp by city ordered by temp (desc)
-SELECT city, AVG(temperatute) AS avg_temp
+-- Displays the top 3 cities tempmduting July and August
+SELECT city, AVG(temperature) AS avg_temp
 FROM temperatures
-GROUP BY city
-ORDER BY avg_temp DESC;
+WHERE MONTH(date) IN (7, 8)
+GROUP by city
+ORDER BY avg_temp DESC
+LIMIT 3;
