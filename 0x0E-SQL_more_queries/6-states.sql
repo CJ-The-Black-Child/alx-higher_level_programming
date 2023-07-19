@@ -6,8 +6,8 @@ USE `hbtn_0d_usa`;
 
 -- Create the table states if it doesn't exist
 CREATE TABLE IF NOT EXISTS state (
-		id INT AUTO_INCREMENT PRIMARY KEY,
-		name VARCHAR(256) NOT NULL
+		`id` INT AUTO_INCREMENT PRIMARY KEY,
+		`name` VARCHAR(256) NOT NULL
 		);
 -- Flush the privileges to apply the changes
 FLUSH PRIVILEGES;
