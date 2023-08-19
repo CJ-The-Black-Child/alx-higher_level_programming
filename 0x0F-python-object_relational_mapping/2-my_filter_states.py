@@ -8,7 +8,7 @@ import sys
 import MySQLdb
 
 
-if --name == "__main__":
+if __name__ == "__main__":
 
     """ Check for correct number of arguments """
     if len(sys.argv) != 5:
