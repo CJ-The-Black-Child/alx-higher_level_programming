@@ -26,11 +26,12 @@ if __name__ == "__main__":
     """Execute the SQL query to select cities of the given state"""
     query = (
         """
-        SELECT cities.id, cities.name
-        FROM cities
-        JOIN states ON cities.state_id=states.id
-        WHERE states.name = %s
-        ORDER by cities.id ASC
+        SELECT *
+        FROM `cities` as `city`
+        INNER JOIN `states` as `state`
+            ON `city`.`state_id` = `state`.`id`
+        WHERE `state`.`name` = %s
+        ORDER by `city`.`id`
         """
     )
     cursor.execute(query, (state_name,))
@@ -38,7 +39,8 @@ if __name__ == "__main__":
     """ Fetch and display the results """
     results = cursor.fetchall()
     for row in results:
-        print(row[1])
+        if row[4] == state_name:
+            print(row[2])
 
     cursor.close()
     db.close()
