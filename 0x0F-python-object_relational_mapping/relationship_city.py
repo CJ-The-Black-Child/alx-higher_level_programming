@@ -4,7 +4,7 @@ Defines a City model which inherits from SQLAlchemy Base and afterwards
 links it to MySQL table name cities.
 """
 
-from sqlalchemy import Column, ForeginKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from relationship_state import Base
