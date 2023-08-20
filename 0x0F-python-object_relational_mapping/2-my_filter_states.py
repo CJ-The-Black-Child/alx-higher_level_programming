@@ -25,13 +25,14 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     """ Create the SQL using format and user input """
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
 
     """ Fetch and display the results """
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
+    states = cursor.fetchall()
+    for state in states:
+        if state[1] == state_name:
+            print(state)
 
     """ Clean up and close the database connection """
     cursor.close()
