@@ -26,18 +26,19 @@ if __name__ == "__main__":
     """Execute the SQL query to select cities of the given state"""
     query = (
         """
-        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC SEPARATOR ',')
+        SELECT cities.id, cities.name, states.name
         FROM cities
         JOIN states ON cities.state_id=states.id
         WHERE states.name = %s
+        ORDER by cities.id ASC
         """
     )
     cursor.execute(query, (state_name,))
 
     """ Fetch and display the results """
-    result = cursor.fetchone()[0]
-    if result:
-        print(result)
+    results = cursor.fetchall()
+    for row in results:
+        print(row[1])
 
     cursor.close()
     db.close()
