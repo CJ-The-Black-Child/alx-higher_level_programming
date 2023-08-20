@@ -26,7 +26,7 @@ if __name__ == "__main__":
     """Execute the SQL query to select cities of the given state"""
     query = (
         """
-        SELECT cities.id, cities.name, states.name
+        SELECT cities.id, cities.name
         FROM cities
         JOIN states ON cities.state_id=states.id
         WHERE states.name = %s
