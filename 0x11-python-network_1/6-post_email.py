@@ -18,4 +18,3 @@ if __name__ == "__main__":
 
     """ Displays the body of the response """
     print(response.text)
-
