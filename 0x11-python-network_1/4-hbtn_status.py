@@ -11,5 +11,5 @@ if __name__ == "__main__":
     rq = requests.get(url)
 
     print("Body response:")
-    print("\t- type: {}".format(type(rq.text).__name__))
+    print("\t- type: {}".format(type(rq.text)))
     print("\t- content: {}".format(rq.text))
