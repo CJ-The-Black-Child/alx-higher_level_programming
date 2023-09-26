@@ -22,6 +22,6 @@ request(url, (err, res, body) => {
 
   } else {
     const characters = JSON.parse(body).characters;
-    printCharcaters(characters, 0)
+    printCharacters(characters, 0);
   }
 })
