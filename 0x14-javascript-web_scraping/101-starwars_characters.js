@@ -8,10 +8,10 @@ function printCharacters (characters, idx) {
     if (err) {
       console.log(err);
     } else {
-      console.log(JSON.parse(body.name);
-        if (idx + 1 < characters.length) {
-          printCharacters(characters, idx + 1);
-        }
+      console.log(JSON.parse(body).name);
+      if (idx + 1 < characters.length) {
+        printCharacters(characters, idx + 1);
+      }
     }
   });
 }
@@ -24,4 +24,4 @@ request(url, (err, res, body) => {
     const characters = JSON.parse(body).characters;
     printCharacters(characters, 0);
   }
-})
+});
