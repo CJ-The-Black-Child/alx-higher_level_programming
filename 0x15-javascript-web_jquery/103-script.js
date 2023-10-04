@@ -3,7 +3,7 @@ $('document').ready(function () {
   $('INPUT#language_code').focus(function () {
     $(this).keydown(function (e) {
     if (e.keyCode === 13) {
-    translate();
+        translate();
     }
     });
   });
